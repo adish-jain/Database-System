@@ -1,0 +1,13 @@
+load students;
+load enrolled;
+load schedule;
+/* Find the CCNs for the student associated with SID 106 */
+select CCN from enrolled, schedule where SID = '106';
+/* Insert a new row and a duplicate row into enrolled */
+insert into enrolled values ('103', '21005', 'B+'), ('107', '21060', 'A');
+print enrolled;
+/* Create a new table by selecting columns from the joined table of schedule and enrolled */
+create table new as select CCN, Num, Grade from schedule, enrolled;
+print new;
+quit;
+

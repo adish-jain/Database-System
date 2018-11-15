@@ -1,0 +1,12 @@
+load students;
+load enrolled;
+load schedule;
+/* SID's of all the students? */
+select SID from students;
+/* Grade and SID of enrolled students who got A's */
+select Grade, SID
+     from enrolled, students where Grade = 'A';
+/* What room is CCN 21103 held in? */
+select Room from schedule where CCN = '21103';
+quit;
+
